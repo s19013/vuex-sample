@@ -1,4 +1,5 @@
 import { createStore } from 'vuex'
+// import axios from 'axios'
 
 export default createStore({
 	state: {
@@ -9,10 +10,12 @@ export default createStore({
 			{name: 'Ken', email: 'ken@amazon.com',age:29}
 		],
 		count:0,
+		dogImage:'',
 	},
 	mutations: {
 		increment : function(state) {state.count++},
-		decrement : function(state) {state.count--}
+		decrement : function(state) {state.count--},
+		changeMessage:function(state,message){state.message = message}
   },
   actions: {
   },
