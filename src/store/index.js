@@ -14,6 +14,11 @@ export default createStore({
   actions: {
   },
   modules: {
-  }
+  },
+	getters:{
+		teenAger:function(state){
+			return state.users.filter(user => user.age < 30)
+		}
+	}
 })
 
