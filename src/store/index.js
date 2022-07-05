@@ -8,8 +8,11 @@ export default createStore({
 			{name: 'Merry', email: 'merry@facebook.com',age:33},
 			{name: 'Ken', email: 'ken@amazon.com',age:29}
 		],
+		count:0,
 	},
 	mutations: {
+		increment : function(state) {state.count++},
+		decrement : function(state) {state.count--}
   },
   actions: {
   },
