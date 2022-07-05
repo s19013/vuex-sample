@@ -15,9 +15,16 @@ export default createStore({
 	mutations: {
 		increment : function(state) {state.count++},
 		decrement : function(state) {state.count--},
-		changeMessage:function(state,message){state.message = message}
+		changeMessage:function(state,message){state.message = message},
+		async getDogImage(state){
+			const response = await fetch("https://dog.ceo/api/breeds/image/random", {method:'get'})
+			.then(response => response.json())
+			console.log(response);
+			state.dogImage = response.message
+		}
   },
   actions: {
+		runGetDogImage:function(context){context.commit('getDogImage')}
   },
   modules: {
   },

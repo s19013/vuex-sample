@@ -7,9 +7,8 @@
 		<p><input v-model="message"></p>
 		<h1>{{$store.state.message}}</h1>
 		<UserList></UserList>
-		<!-- <img :src="imgpath" >
-		<p>{{imgpath}}</p> -->
-		<p>{{$store.state.dogImage}}</p>
+		<img :src="$store.state.dogImage" >
+
 	</div>
 </template>
 
@@ -30,7 +29,8 @@ export default {
 		message:{
 			get(){return this.$store.state.message},
 			set(value){this.$store.commit('changeMessage',value)}
-			}
+		},
+
 	},
 	methods: {
 		increment:function(){this.$store.commit('increment')},
@@ -38,7 +38,7 @@ export default {
 		changeMessage:function(){this.$store.commit('changeMessage')},
 	},
 	mounted() {
-		// this.$store.dispatch('')
+		this.$store.dispatch('runGetDogImage')
 	},
 }
 </script>
